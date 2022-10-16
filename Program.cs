@@ -53,11 +53,114 @@
 // 3 -> 1, 8, 27
 // 5 -> 1, 8, 27, 64, 125
 
-Console.Write("Введите число N:");
-int nam = Convert.ToInt32(Console.ReadLine());
-double rezalt = 0;
-for (int i = 1; i <= nam; i++ )
-{
-    rezalt = Math.Pow (i,3);
-    Console.WriteLine(rezalt);
-}
+// Console.Write("Введите число N:");
+// int nam = Convert.ToInt32(Console.ReadLine());
+// double rezalt = 0;
+// for (int i = 1; i <= nam; i++ )
+// {
+//     rezalt = Math.Pow (i,3);
+//     Console.WriteLine(rezalt);
+// }
+
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// 3, 5 -> 243 (3⁵)
+// 2, 4 -> 16
+
+// Console.Write("Введите число X:");
+// int nam = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число Y:");
+// int nam1 = Convert.ToInt32(Console.ReadLine());
+// int rezalt = nam;
+// for (int i = 1; i < nam1; i++)
+// {
+//     rezalt = rezalt * nam;
+// }
+// Console.WriteLine(rezalt);
+
+// Задача 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+// 452 -> 11
+// 82 -> 10
+// 9012 -> 12
+
+// Console.Write("Введите число N:");
+// int nam = Convert.ToInt32(Console.ReadLine());
+// int rezalt = 0;
+// for (int i = 1; nam > 0; i++)
+// {
+//     rezalt = rezalt + nam % 10;
+//     nam = nam / 10;
+// }
+// Console.WriteLine(rezalt);
+
+// Задача 29: Напишите программу, которая задаёт массив из 8 элементов и выводит их на экран.
+// 1, 2, 5, 7, 19 -> [1, 2, 5, 7, 19]
+// 6, 1, 33 -> [6, 1, 33]
+
+// int[] array = new int[8];
+// Console.Write( "[ " );
+//     for (int i = 0; i < 5; i++)
+//     {
+//         array[i] = new Random().Next(1,99);
+//         Console.Write($"{array[i]}  "); 
+//     }
+//     Console.WriteLine( "]" );
+//     Console.Write( "[ " );
+// for (int i = 5; i < 8; i++)
+//     {
+//         array[i] = new Random().Next(1,99);
+//         Console.Write($"{array[i]}  "); 
+//     }
+//     Console.WriteLine( "]" );
+
+// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+// [345, 897, 568, 234] -> 2
+
+// Console.Write("Введите размер массива N:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int count = 0;
+// int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(100,1000);
+//         Console.Write($"{array[i]}  "); 
+//         if ((array[i]) % 2 == 0) count ++;
+//     }
+// Console.WriteLine();
+// Console.Write($"Четных чисел:{count}");
+
+// Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
+
+// Console.Write("Введите размер массива N:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int sum = 0;
+// int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(-9,100);
+//         Console.Write($"{array[i]}  "); 
+//         if (i % 2 == 0) sum = sum + array[i];
+//     }
+// Console.WriteLine();
+// Console.Write($"Сумма чисел на нечетных позициях:{sum}");
+
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+// [3 7 22 2 78] -> 76
+
+Console.Write("Введите размер массива N:");
+int size = Convert.ToInt32(Console.ReadLine());
+int min = 100;
+int max = 0;
+int diff = 0;
+int[] array = new int[size];
+    for (int i = 0; i < size; i++)
+    {
+        array[i] = new Random().Next(0,100);
+        Console.Write($"{array[i]}  "); 
+        if (array[i] < min) min = array[i];
+        else if(array[i] > max) max = array[i];
+    }
+diff = max - min;
+Console.WriteLine();
+Console.Write($"Разница min max:{diff}");
