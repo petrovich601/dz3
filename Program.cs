@@ -148,19 +148,65 @@
 // Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 // [3 7 22 2 78] -> 76
 
-Console.Write("Введите размер массива N:");
-int size = Convert.ToInt32(Console.ReadLine());
-int min = 100;
-int max = 0;
-int diff = 0;
-int[] array = new int[size];
-    for (int i = 0; i < size; i++)
+// Console.Write("Введите размер массива N:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int min = 100;
+// int max = 0;
+// int diff = 0;
+// int[] array = new int[size];
+//     for (int i = 0; i < size; i++)
+//     {
+//         array[i] = new Random().Next(0,100);
+//         Console.Write($"{array[i]}  "); 
+//         if (array[i] < min) min = array[i];
+//         else if(array[i] > max) max = array[i];
+//     }
+// diff = max - min;
+// Console.WriteLine();
+// Console.Write($"Разница min max:{diff}");
+
+// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// 0, 7, 8, -2, -2 -> 2
+// 1, -7, 567, 89, 223-> 3
+
+// Console.Write("Введите количество проверяемых чисел:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] array = new int[size];
+// for(int i = 0; i < array.Length; i++)
+// {
+//     Console.Write($"Введите чисело:{i+1}: ");
+//     array[i] = Convert.ToInt32(Console.ReadLine());
+// }
+// int pos = 0;
+// for(int j = 0; j < array.Length; j++)
+// {
+// if (array[j] > 0) pos = pos + 1;
+// }
+// Console.Write($"Чисел больше 0:{pos} ");
+
+// Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых,
+// заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2
+// задаются пользователем.
+// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+Console.Write("Введите коэффициент b1:");
+int b1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите коэффициент k1:");
+int k1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите коэффициент b2:");
+int b2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите коэффициент k2:");
+int k2 = Convert.ToInt32(Console.ReadLine());
+double x = -99;
+double y1 = 0;
+double y2 = 0;
+while (x < 99)
+{
+    y1 = k1 * x + b1;
+    y2 = k2 * x + b2;
+    if ( y1 == y2 )
     {
-        array[i] = new Random().Next(0,100);
-        Console.Write($"{array[i]}  "); 
-        if (array[i] < min) min = array[i];
-        else if(array[i] > max) max = array[i];
+        Console.Write($"x: {x}, y: {y1}");
     }
-diff = max - min;
-Console.WriteLine();
-Console.Write($"Разница min max:{diff}");
+    x = x + 0.5;
+}
