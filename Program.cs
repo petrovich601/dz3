@@ -169,44 +169,34 @@
 // 0, 7, 8, -2, -2 -> 2
 // 1, -7, 567, 89, 223-> 3
 
-// Console.Write("Введите количество проверяемых чисел:");
-// int size = Convert.ToInt32(Console.ReadLine());
-// int[] array = new int[size];
-// for(int i = 0; i < array.Length; i++)
-// {
-//     Console.Write($"Введите чисело:{i+1}: ");
-//     array[i] = Convert.ToInt32(Console.ReadLine());
-// }
-// int pos = 0;
-// for(int j = 0; j < array.Length; j++)
-// {
-// if (array[j] > 0) pos = pos + 1;
-// }
-// Console.Write($"Чисел больше 0:{pos} ");
+Console.Write("Введите количество проверяемых чисел:");
+int size = Convert.ToInt32(Console.ReadLine());
+int[] array = new int[size];
+for(int i = 0; i < array.Length; i++)
+{
+    Console.Write($"Введите чисело:{i+1}: ");
+    array[i] = Convert.ToInt32(Console.ReadLine());
+}
+int pos = 0;
+for(int j = 0; j < array.Length; j++)
+{
+if (array[j] > 0) pos = pos + 1;
+}
+Console.Write($"Чисел больше 0:{pos} ");
 
 // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых,
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2
 // задаются пользователем.
 // b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
-Console.Write("Введите коэффициент b1:");
-int b1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите коэффициент k1:");
-int k1 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите коэффициент b2:");
-int b2 = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите коэффициент k2:");
-int k2 = Convert.ToInt32(Console.ReadLine());
-double x = -99;
-double y1 = 0;
-double y2 = 0;
-while (x < 99)
-{
-    y1 = k1 * x + b1;
-    y2 = k2 * x + b2;
-    if ( y1 == y2 )
-    {
-        Console.Write($"x: {x}, y: {y1}");
-    }
-    x = x + 0.5;
-}
+// Console.Write("Введите коэффициент b1:");
+// int b1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите коэффициент k1:");
+// int k1 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите коэффициент b2:");
+// int b2 = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите коэффициент k2:");
+// int k2 = Convert.ToInt32(Console.ReadLine());
+// double x = ((double)(b2 - b1) / (k1 -k2));
+// double y = k1 * x + b1;
+// Console.Write($"x: {x}, y: {y}");
