@@ -169,20 +169,20 @@
 // 0, 7, 8, -2, -2 -> 2
 // 1, -7, 567, 89, 223-> 3
 
-Console.Write("Введите количество проверяемых чисел:");
-int size = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[size];
-for(int i = 0; i < array.Length; i++)
-{
-    Console.Write($"Введите чисело:{i+1}: ");
-    array[i] = Convert.ToInt32(Console.ReadLine());
-}
-int pos = 0;
-for(int j = 0; j < array.Length; j++)
-{
-if (array[j] > 0) pos = pos + 1;
-}
-Console.Write($"Чисел больше 0:{pos} ");
+// Console.Write("Введите количество проверяемых чисел:");
+// int size = Convert.ToInt32(Console.ReadLine());
+// int[] array = new int[size];
+// for(int i = 0; i < array.Length; i++)
+// {
+//     Console.Write($"Введите чисело:{i+1}: ");
+//     array[i] = Convert.ToInt32(Console.ReadLine());
+// }
+// int pos = 0;
+// for(int j = 0; j < array.Length; j++)
+// {
+// if (array[j] > 0) pos = pos + 1;
+// }
+// Console.Write($"Чисел больше 0:{pos} ");
 
 // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых,
 // заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2
@@ -200,3 +200,92 @@ Console.Write($"Чисел больше 0:{pos} ");
 // double x = ((double)(b2 - b1) / (k1 -k2));
 // double y = k1 * x + b1;
 // Console.Write($"x: {x}, y: {y}");
+
+// Задача 47. Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+// m = 3, n = 4.
+// 0,5 7 -2 -0,2
+// 1 -3,3 8 -9,9
+// 8 7,8 -7,1 9
+
+// Console.Write("Введите количество строк массива:");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите количество столбцов массива:");
+// int n = Convert.ToInt32(Console.ReadLine());
+// double[,] array = new double[m,n];
+// Random r = new Random();
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < n; j++)
+//     {
+//       array[i,j] = Math.Round(r.NextDouble() * (10 - (-10)) + (-10),1);
+//       Console.Write($"{   array[i,j]}    ");  
+//     }
+//  Console.WriteLine();   
+// }
+
+// Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 17 -> такого числа в массиве нет
+
+// Console.Write("Введите количество строк массива:");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите количество столбцов массива:");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите проверяемый элемент:");
+// int x = Convert.ToInt32(Console.ReadLine());
+// int[,] array = new int[m,n];
+// Random r = new Random();
+// string rezalt = "такого числа в массиве нет";
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < n; j++)
+//     {
+//       array[i,j] = r.Next(1,99);
+//       Console.Write($"{   array[i,j]}    ");
+//       if(array[i,j] == x)
+//       {
+//         rezalt = "имеется в массиве";
+//       }
+//     }
+//  Console.WriteLine();   
+// }
+// Console.Write($"{ x } {rezalt} ");
+
+// Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
+
+Console.Write("Введите количество строк массива:");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите количество столбцов массива:");
+int n = Convert.ToInt32(Console.ReadLine());
+int[,] array = new int[m,n];
+Random r = new Random();
+for (int i = 0; i < m; i++)
+{
+    for (int j = 0; j < n; j++)
+    {
+      array[i,j] = r.Next(1,9);
+      Console.Write($"{   array[i,j]}      ");
+    }
+ Console.WriteLine();
+}
+ Console.WriteLine("среднее арифметическое");
+double[] sum = new double[n];
+double[] arifm = new double[n];
+for (int k = 0; k < n; k++)
+{
+   for (int l = 0; l < m; l++)
+   {
+    sum[k] = sum[k] + array[l,k];
+    arifm[k] = Math.Round((sum[k] / m),2);
+   }
+    Console.Write($"{ arifm[k]}  ");
+}
+ 
