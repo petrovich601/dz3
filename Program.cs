@@ -261,31 +261,280 @@
 // 8 4 2 4
 // Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.
 
-Console.Write("Введите количество строк массива:");
-int m = Convert.ToInt32(Console.ReadLine());
-Console.Write("Введите количество столбцов массива:");
-int n = Convert.ToInt32(Console.ReadLine());
-int[,] array = new int[m,n];
-Random r = new Random();
-for (int i = 0; i < m; i++)
+// Console.Write("Введите количество строк массива:");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите количество столбцов массива:");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[,] array = new int[m,n];
+// Random r = new Random();
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < n; j++)
+//     {
+//       array[i,j] = r.Next(1,9);
+//       Console.Write($"{   array[i,j]}      ");
+//     }
+//  Console.WriteLine();
+// }
+//  Console.WriteLine("среднее арифметическое");
+// double[] sum = new double[n];
+// double[] arifm = new double[n];
+// for (int k = 0; k < n; k++)
+// {
+//    for (int l = 0; l < m; l++)
+//    {
+//     sum[k] = sum[k] + array[l,k];
+//     arifm[k] = Math.Round((sum[k] / m),2);
+//    }
+//     Console.Write($"{ arifm[k]}  ");
+// }
+ 
+// Console.Write("Введите количество строк массива:");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите количество столбцов массива:");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[,] array = new int[m,n];
+// int[,] array1 = array;
+// Random r = new Random();
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < n; j++)
+//     {
+//       array[i,j] = r.Next(1,9);
+//       Console.Write($"{   array[i,j]}      ");
+//     }
+//  Console.WriteLine();
+// }
+//  Console.WriteLine();
+// for (int p = 0; p < m; p++)
+// {
+//    for (int k = 0; k < n; k++)
+//     {
+//       array1[0,k] = array[m-1,k];
+//       array1[m-1,k] = array[0,k];
+//       Console.Write($"{   array1[p,k]}      ");
+//     }
+// Console.WriteLine();
+//     array1[m-1,k] = array[1,k];
+// }
+// for (int l = 0; l < m; l++)
+// {
+//     for (int p = 0; p < n; p++)
+//     {
+//       Console.Write($"{   array1[l,p]}      ");
+//     }
+//  Console.WriteLine();
+// }
+
+
+//  Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит
+// по убыванию элементы каждой строки двумерного массива.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// В итоге получается вот такой массив:
+// 7 4 2 1
+// 9 5 3 2
+// 8 4 4 2
+
+// Console.Write("Введите количество строк массива:");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите количество столбцов массива:");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int[,] array = new int[m,n];
+// Random r = new Random();
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < n; j++)
+//     {
+//       array[i,j] = r.Next(1,9);
+//       Console.Write($"{   array[i,j]}      ");
+//     }
+//  Console.WriteLine();
+// }
+//  Console.WriteLine();
+// int temp = 0;
+// for (int p = 0; p < m; p++)
+// {
+//    for (int k = 1; k < n; k++)
+//     {
+//       for (int l = 0; l < n-1; l++)
+//       {
+//       if (array[p,l] < array[p,l+1])
+//       {
+//         temp = array[p,l];
+//         array[p,l] = array[p,l+1];
+//         array[p,l+1] = temp;
+//       }
+//       }
+//     }
+// }
+// for (int p = 0; p < m; p++)
+// {
+//    for (int k = 0; k < n; k++)
+//     {
+//       Console.Write($"{   array[p,k]}      ");
+//     }
+// Console.WriteLine();
+// }
+
+
+// Задача 56: Задайте прямоугольный двумерный массив. Напишите программу,
+//  которая будет находить строку с наименьшей суммой элементов.
+// Например, задан массив:
+// 1 4 7 2
+// 5 9 2 3
+// 8 4 2 4
+// 5 2 6 7
+// Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
+
+// Console.Write("Введите размер массива:");
+// int m = Convert.ToInt32(Console.ReadLine());
+// int[,] array = new int[m,m];
+// Random r = new Random();
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < m; j++)
+//     {
+//       array[i,j] = r.Next(1,9);
+//       Console.Write($"{   array[i,j]}      ");
+//     }
+//  Console.WriteLine();
+// }
+//  Console.WriteLine();
+//  int temp = 0;
+//  int nam = 0;
+// for (int p = 0; p < m; p++)
+// {
+//   int sum = 0;
+//   for (int k = 0; k < m; k++)
+//     {
+//       sum += array[p,k];
+//     }
+//   if (temp < sum)
+//    {
+//     temp = sum;
+//     nam = p;
+//    }
+// }
+// for (int l = 0; l < m; l++)
+//     {
+//       Console.Write($"{   array[nam,l]}      ");
+//     }
+//     Console.Write($" Строка №  {   nam}      ");
+
+
+// Задача 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+// Например, даны 2 матрицы:
+// 2 4 | 3 4
+// 3 2 | 3 3
+// Результирующая матрица будет:
+// 18 20
+// 15 18
+
+// Console.Write("Введите размер матриц:");
+// int m = Convert.ToInt32(Console.ReadLine());
+// int[,] array1 = new int[m,m];
+// Random r = new Random();
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < m; j++)
+//     {
+//       array1[i,j] = r.Next(1,9);
+//       Console.Write($"{   array1[i,j]}      ");
+//     }
+//  Console.WriteLine();
+// }
+// Console.WriteLine();
+// int[,] array2 = new int[m,m];
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < m; j++)
+//     {
+//       array2[i,j] = r.Next(1,9);
+//       Console.Write($"{   array2[i,j]}      ");
+//     }
+//  Console.WriteLine();
+// }
+// Console.WriteLine();
+// int[,] array12 = new int[m,m];
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < m; j++)
+//     {
+//       for (int k = 0; k < m; k++)
+//       {
+//       array12[i,j] += array1[i,k] * array2[k,j];
+//       }
+//       Console.Write($"{   array12[i,j]}      ");
+//     }
+//  Console.WriteLine();
+// }
+
+
+// Задача 60. ...Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая будет построчно выводить массив, добавляя индексы каждого элемента.
+// Массив размером 2 x 2 x 2
+// 66(0,0,0) 25(0,1,0)
+// 34(1,0,0) 41(1,1,0)
+// 27(0,0,1) 90(0,1,1)
+// 26(1,0,1) 55(1,1,1)
+
+// int m = 2;
+// double[,,] array = new double[m,m,m];
+// Random r = new Random();
+// for (int i = 0; i < m; i++)
+// {
+//     for (int j = 0; j < m; j++)
+//     {
+//       for (int k = 0; k < m; k++)
+//       {
+//         array[i,j,k] = new Random().Next(0,100);
+//         Console.Write($"{   array[i,j,k]}  ({i},{j},{k})  ");
+//       }
+//     }
+//  Console.WriteLine();   
+// }
+
+// Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
+// Например, на выходе получается вот такой массив:
+// 01 02 03 04
+// 12 13 14 05
+// 11 16 15 06
+// 10 09 08 07
+
+
+Console.Clear();
+int[,] matrix = new int[4,4];
+int temp = 1;
+int i = 0;
+int j = 0;
+
+void FillMatrix(int[,] matrix)
 {
-    for (int j = 0; j < n; j++)
+    while (temp <= matrix.GetLength(0)*matrix.GetLength(1))
     {
-      array[i,j] = r.Next(1,9);
-      Console.Write($"{   array[i,j]}      ");
+        matrix[i,j] = temp;
+        temp++;
+        if (i <= j + 1 && i + j < matrix.GetLength(1) - 1)
+        j++;
+        else if (i < j && i + j >= matrix.GetLength(0) - 1)
+        i++;
+        else if (i >= j && i + j > matrix.GetLength(1) - 1)
+        j--;
+        else
+        i--;
+    }
+}
+
+FillMatrix(matrix);
+
+for (i = 0; i < matrix.GetLength(0); i++)
+{
+    for ( j = 0; j < matrix.GetLength(1); j++)
+    {
+      Console.Write($"{   matrix[i,j],2}      ");
     }
  Console.WriteLine();
 }
- Console.WriteLine("среднее арифметическое");
-double[] sum = new double[n];
-double[] arifm = new double[n];
-for (int k = 0; k < n; k++)
-{
-   for (int l = 0; l < m; l++)
-   {
-    sum[k] = sum[k] + array[l,k];
-    arifm[k] = Math.Round((sum[k] / m),2);
-   }
-    Console.Write($"{ arifm[k]}  ");
-}
- 
+Console.WriteLine();
