@@ -504,37 +504,108 @@
 // 10 09 08 07
 
 
-Console.Clear();
-int[,] matrix = new int[4,4];
-int temp = 1;
-int i = 0;
-int j = 0;
+// Console.Clear();
+// int[,] matrix = new int[4,4];
+// int temp = 1;
+// int i = 0;
+// int j = 0;
 
-void FillMatrix(int[,] matrix)
+// void FillMatrix(int[,] matrix)
+// {
+//     while (temp <= matrix.GetLength(0)*matrix.GetLength(1))
+//     {
+//         matrix[i,j] = temp;
+//         temp++;
+//         if (i <= j + 1 && i + j < matrix.GetLength(1) - 1)
+//         j++;
+//         else if (i < j && i + j >= matrix.GetLength(0) - 1)
+//         i++;
+//         else if (i >= j && i + j > matrix.GetLength(1) - 1)
+//         j--;
+//         else
+//         i--;
+//     }
+// }
+
+// FillMatrix(matrix);
+
+// for (i = 0; i < matrix.GetLength(0); i++)
+// {
+//     for ( j = 0; j < matrix.GetLength(1); j++)
+//     {
+//       Console.Write($"{   matrix[i,j],2}      ");
+//     }
+//  Console.WriteLine();
+// }
+// Console.WriteLine();
+
+// Задача 64: Задайте значение N. Напишите программу, которая выведет 
+// все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
+// N = 5 -> "5, 4, 3, 2, 1"
+// N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
+
+
+// string RowRecursion(int N)
+// {
+//     if (N == 1) return $"{N} ";
+//     else return $"{N} " + RowRecursion(N - 1);
+// }
+// Console.Write("Введите число N: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine(RowRecursion(n));
+
+
+// Задача 66: Задайте значения M и N. Напишите программу, которая найдёт
+// сумму натуральных элементов в промежутке от M до N.
+// M = 1; N = 15 -> 120
+// M = 4; N = 8. -> 30
+
+// Console.Write("Введите число M: ");
+// int m = Convert.ToInt32(Console.ReadLine());
+// Console.Write("Введите число N: ");
+// int n = Convert.ToInt32(Console.ReadLine());
+// int SumRec(int n)
+// {
+//     if (n == m) return m;
+//     else return n + SumRec(n - 1);
+// }
+// Console.WriteLine(SumRec(n));
+
+
+// Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии.
+// Даны два неотрицательных числа m и n.
+// m = 2, n = 3 -> A(m,n) = 9
+// m = 3, n = 2 -> A(m,n) = 29
+
+Console.Write("Введите число M: ");
+int m = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите число N: ");
+int n = Convert.ToInt32(Console.ReadLine());
+int A(int m, int n)
 {
-    while (temp <= matrix.GetLength(0)*matrix.GetLength(1))
-    {
-        matrix[i,j] = temp;
-        temp++;
-        if (i <= j + 1 && i + j < matrix.GetLength(1) - 1)
-        j++;
-        else if (i < j && i + j >= matrix.GetLength(0) - 1)
-        i++;
-        else if (i >= j && i + j > matrix.GetLength(1) - 1)
-        j--;
-        else
-        i--;
-    }
+    if (m == 0) return n + 1;
+    if (m > 0 && n == 0) return A(m - 1, 1);
+    if (m > 0 && n > 0) return A(m - 1, A(m, n - 1));
+    else return A(m,n);
 }
+Console.WriteLine(A(m,n));
 
-FillMatrix(matrix);
 
-for (i = 0; i < matrix.GetLength(0); i++)
-{
-    for ( j = 0; j < matrix.GetLength(1); j++)
-    {
-      Console.Write($"{   matrix[i,j],2}      ");
-    }
- Console.WriteLine();
-}
-Console.WriteLine();
+
+
+
+
+
+
+
+
+
+
+// string name = "Юрий";
+// Console.WriteLine($"Добрый день, {name}");
+// Console.WriteLine("Отличная работа. Справились с самым сложным ДЗ");
+// Console.WriteLine("ДЗ принимается");
+// for (int i=1; i < 4; i++)
+// {
+// Console.WriteLine("Гип-гип - УРА !");
+// }
